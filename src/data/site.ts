@@ -1,14 +1,14 @@
 export const site = {
   name: 'Kirti Patange', tagline: 'HR Consulting & Advisory', location: 'Mumbai, India',
-  title: 'Kirti Patange | HR Strategy & Organisation Consultant Mumbai',
-  description: 'HR consultant in Mumbai helping growing organisations with HR strategy, organisation design, workforce planning, performance management and HRMS transformation.',
+  title: 'Kirti Patange | HR Consultant in Mumbai | Strategy, People & Organisation',
+  description: 'Senior HR consultant in Mumbai supporting organisations with HR strategy, organisation design, workforce planning, performance management, HRMS and HR transformation.',
   contact: { email: 'kirti.hr.consulting@gmail.com', phone: '+91 92208 14016' },
   photo: { src: '', alt: 'Kirti Patange, HR consultant' },
   socialLinks: [] as { label: string; url: string }[],
   socialImage: '',
-  partnership: { confirmed: false, name: 'TattvikaSetu', label: 'Strategic Consulting Collaboration', copy: 'For broader business transformation requirements, Kirti collaborates with specialist consulting partners to bring complementary expertise in governance, operations and digital transformation.' },
+  partnership: { confirmed: false, name: 'TattvikaSetu', label: 'Strategic Consulting Collaboration', copy: 'For broader transformation requirements, Kirti collaborates with specialist consultants and professional networks to complement HR advisory with expertise across business transformation, governance, operations and digital initiatives.' },
 };
-export const navigation = [ ['Home','home'], ['Services','services'], ['Special Projects','special-projects'], ['How We Work','how-we-work'], ['Results','results'], ['About','about'], ['Industries','industries'], ['Partnerships','partnerships'], ['Contact','contact'] ];
+export const navigation = [['Home','home'], ['Services','services'], ['Special Projects','special-projects'], ['How We Work','how-we-work'], ['About','about'], ['Contact','contact']];
 export const metrics = [
   { value:'17+', label:'Years in HR' },
   { value:'250+', label:'Annual hires supported' },
@@ -23,10 +23,10 @@ export const challenges = [
 ];
 export const services = [
   { title:'HR Strategy & Governance', description:'Give people decisions a clear business direction and a consistent foundation.', items:['HR strategy and leadership advisory','Policy frameworks and people governance','HR operating models and process standards','HR budgets and workforce cost planning'] },
-  { title:'Organisation Design & Role Architecture', description:'Make structure, ownership and reporting relationships easier to understand.', items:['Organisation structures and reporting lines','Job architecture, descriptions and role clarity','RACI responsibility mapping and SOPs','Designation rationalisation and role augmentation'] },
+  { title:'Organisation Design & Role Architecture', description:'Make structure, ownership and reporting relationships easier to understand.', items:['Organisation structures and reporting lines','Job architecture, descriptions and role clarity','RACI responsibility mapping and SOPs','Role & designation rationalisation'] },
   { title:'Workforce & Talent Planning', description:'Plan the capability and capacity your next stage of growth needs.', items:['Headcount forecasting and talent mapping','Critical roles and succession pipelines','Skill gaps, internal mobility and resource utilisation','Bench management where relevant'] },
-  { title:'Performance Management', description:'Connect everyday contribution to meaningful business outcomes.', items:['KRAs, KPIs and SMART goals','Review cycles and probation performance','Manager guidance and performance calibration','Rewards, recognition and business alignment'] },
-  { title:'HR Transformation & HRMS', description:'Build practical digital workflows around the way your organisation works.', items:['Requirements and vendor evaluation support','Process mapping and implementation support','Employee data migration planning','Workflow automation, analytics and dashboards'] },
+  { title:'Performance Management', description:'Connect everyday contribution to meaningful business outcomes.', items:['KRAs, KPIs and SMART goals','Review cycles and probation performance','Manager guidance & performance calibration','Rewards, recognition and business alignment'] },
+  { title:'HR Transformation & HRMS', description:'Build practical digital workflows around the way your organisation works.', items:['HRMS requirements & vendor evaluation','Process mapping and implementation support','Employee data migration planning','Workflow automation, analytics and dashboards'] },
   { title:'Employee Experience & Organisation Development', description:'Create consistent people practices across the employee lifecycle.', items:['Induction, communication and engagement','Culture alignment and retention','Grievance frameworks and employee experience','Leadership development and succession readiness'] },
 ];
 export const projects = [
