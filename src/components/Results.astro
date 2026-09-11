@@ -1,0 +1,5 @@
+---
+import {results} from '../data/site';
+import SectionHeading from './SectionHeading.astro';
+---
+<section id="results" class="section results-section"><div class="container"><div class="section-top"><SectionHeading eyebrow="Experience in action" title="Practical work. Measurable progress."/><p class="section-aside">Selected achievements reported in Kirti’s professional profile, across her previous HR roles.</p></div><div class="results-grid">{results.map(result=><article><strong>{result.value}</strong><h3>{result.label}</h3><p>{result.text}</p></article>)}</div><p class="results-note">Career achievements relate to prior roles and specific organisational contexts. They are not results of this new consulting practice or guarantees of future outcomes.</p></div></section>

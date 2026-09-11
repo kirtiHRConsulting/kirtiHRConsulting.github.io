@@ -1,0 +1,5 @@
+---
+import {challenges} from '../data/site';
+import SectionHeading from './SectionHeading.astro';
+---
+<section class="section"><div class="container split-section"><SectionHeading eyebrow="When growth gets complex" title="Is your HR keeping pace with your business?" description="As organisations grow, people challenges become business challenges. The right structure creates room to move forward."/><div class="challenge-list">{challenges.map(([title,text],i)=><article><span class="number">0{i+1}</span><div><h3>{title}</h3><p>{text}</p></div></article>)}</div></div></section>

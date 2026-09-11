@@ -1,0 +1,4 @@
+---
+import {site} from '../data/site';
+---
+<footer><div class="container footer-inner"><a class="wordmark" href="#home"><strong>{site.name}</strong><span>{site.tagline}</span></a><div class="footer-contact"><span>{site.location}</span><a href={`mailto:${site.contact.email}`}>{site.contact.email}</a><a href={`tel:${site.contact.phone.replace(/[^+\d]/g,'')}`}>{site.contact.phone}</a></div><div>{site.socialLinks.map(link=><a href={link.url}>{link.label}</a>)}<a class="back-top" href="#home">Back to top ↑</a></div></div><div class="container footer-bottom"><span>© {new Date().getFullYear()} {site.name}. All rights reserved.</span><span>{site.location}</span></div></footer>

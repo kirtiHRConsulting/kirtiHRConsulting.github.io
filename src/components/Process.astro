@@ -1,0 +1,5 @@
+---
+import {process} from '../data/site';
+import SectionHeading from './SectionHeading.astro';
+---
+<section id="how-we-work" class="section"><div class="container"><SectionHeading eyebrow="How we work" title="From understanding to lasting practice." description="A collaborative approach, with clear priorities, shared ownership and measures that matter to your organisation."/><ol class="process-grid">{process.map(([title,text],i)=><li><span>0{i+1}</span><h3>{title}</h3><p>{text}</p></li>)}</ol></div></section>

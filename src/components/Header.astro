@@ -1,0 +1,11 @@
+---
+import {site,navigation} from '../data/site';
+---
+<header class="site-header"><div class="container header-inner"><a class="wordmark" href="#home"><strong>{site.name}</strong><span>{site.tagline}</span></a><button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu <span aria-hidden="true">☰</span></button><nav id="primary-nav" aria-label="Main navigation">{navigation.map(([label,id])=><a href={`#${id}`}>{label}</a>)}</nav><a class="button small header-cta" href="#contact">Discuss Your HR Needs <span aria-hidden="true">↗</span></a></div></header>
+<script>
+const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+const nav = document.querySelector<HTMLElement>('#primary-nav');
+toggle?.addEventListener('click',()=>{ const open=toggle.getAttribute('aria-expanded')!=='true'; toggle.setAttribute('aria-expanded',String(open)); nav?.classList.toggle('is-open',open); });
+nav?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{toggle?.setAttribute('aria-expanded','false');nav.classList.remove('is-open');}));
+document.addEventListener('keydown',event=>{if(event.key==='Escape' && toggle?.getAttribute('aria-expanded')==='true'){toggle.setAttribute('aria-expanded','false');nav?.classList.remove('is-open');toggle.focus();}});
+</script>

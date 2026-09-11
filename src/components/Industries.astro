@@ -1,0 +1,5 @@
+---
+import {industries} from '../data/site';
+import SectionHeading from './SectionHeading.astro';
+---
+<section id="industries" class="section industries-section"><div class="container"><SectionHeading eyebrow="Cross-sector perspective" title="Different industries. Shared people priorities." description="Experience across in-house HR roles and independent consulting assignments."/><ul class="industry-list">{industries.map(industry=><li>{industry}</li>)}</ul></div></section>

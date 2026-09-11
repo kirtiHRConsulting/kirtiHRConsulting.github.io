@@ -1,0 +1,18 @@
+---
+import {site} from '../data/site';
+const ready = Boolean(site.contact.email);
+---
+<section id="contact" class="section contact-section"><div class="container contact-grid"><div><p class="eyebrow">Start with a conversation</p><h2>Let’s discuss<br/>your HR priorities.</h2><p>Whether you are building your HR foundation, restructuring your organisation, implementing HRMS or strengthening workforce performance, start with a conversation.</p><div class="contact-details"><span>{site.location}</span>{site.contact.email && <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>}{site.contact.phone && <a href={`tel:${site.contact.phone.replace(/[^+\d]/g,'')}`}>{site.contact.phone}</a>}</div><p class="contact-note">{ready ? 'This form opens a draft in your email application. Nothing is sent until you send the email.' : 'Enquiry form preview. Business contact details are being finalised; this form does not send or store your information.'}</p></div><form id="enquiry-form" data-email={site.contact.email} aria-describedby="form-status"><div class="form-row"><label for="name">Name<input id="name" name="name" autocomplete="name" required maxlength="100" placeholder="Your name"/></label><label for="company">Company<input id="company" name="company" autocomplete="organization" maxlength="150" placeholder="Your organisation"/></label></div><div class="form-row"><label for="email">Email<input id="email" name="email" type="email" autocomplete="email" required maxlength="200" placeholder="you@company.com"/></label><label for="phone">Phone <span>(optional)</span><input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="40" placeholder="Your phone number"/></label></div><label for="message">What would you like help with?<textarea id="message" name="message" rows="4" required maxlength="2000" placeholder="Tell us a little about your HR priorities."></textarea></label><button class="button" type="submit" disabled={!ready}>{ready ? 'Prepare email enquiry' : 'Enquiries opening soon'}<span aria-hidden="true">↗</span></button><p id="form-status" class="form-status" role="status">{ready ? 'Please share only the information needed for an initial conversation.' : 'Preview only — sending is not enabled.'}</p><noscript>{ready ? <p>Please use the email address shown to get in touch.</p> : <p>Business contact details will be added before launch.</p>}</noscript></form></div></section>
+<script>
+const form=document.querySelector<HTMLFormElement>('#enquiry-form');
+form?.addEventListener('submit',event=>{
+  event.preventDefault();
+  const recipient=form.dataset.email;
+  if(!recipient || !form.reportValidity()) return;
+  const fields=new FormData(form);
+  const body=['Name: '+fields.get('name'),'Company: '+fields.get('company'),'Email: '+fields.get('email'),'Phone: '+fields.get('phone'),'','HR priorities:',String(fields.get('message'))].join('\n');
+  window.location.href=`mailto:${encodeURIComponent(recipient)}?subject=${encodeURIComponent('HR consulting enquiry')}&body=${encodeURIComponent(body)}`;
+  const status=document.querySelector('#form-status');
+  if(status) status.textContent='Your email application has been requested. Review and send the draft there, or use the email link if it does not open.';
+});
+</script>
